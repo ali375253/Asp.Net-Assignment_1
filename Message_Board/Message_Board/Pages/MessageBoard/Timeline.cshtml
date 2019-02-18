@@ -1,0 +1,34 @@
+﻿@page
+@model TimelineModel
+@{
+    ViewData["Title"] = "Timeline";
+}
+
+<h1>Timeline</h1>
+@*@foreach (var message in Model.Timeline)
+    {
+        <partial name="_Summary" model="message" />
+    }*@
+
+<div class="panel panel-default">
+    <form method="get">
+        @foreach (var message in Model.Timeline)
+        {
+            <div class="panel-body">
+                @*<span>@Model.MessageId</span>*@
+                @*<span>@message.MessageId</span>*@
+                <table class="table te-stripeabld">
+                    <tr>
+                        <td width="100%"><span>@message.MessageContent</span></td>
+                        
+                        <td><span><a asp-for="Message" asp-route-messageId="@message.MessageId" class="btn btn-primary">Likes : @message.Likes </a></span></td>
+                    
+                        <td><span><a asp-page=".\Comments" asp-route-messageId="@message.MessageId" class="btn btn-warning">Comments : @message.Comments</a></span></td>
+                        <td><a asp-page=".\AddComment" asp-route-messageId="@message.MessageId" class="btn btn-success">Add Comment</a></td>
+                    </tr>
+                 </table>
+             </div>
+        }
+     </form>
+        <a asp-page=".\AddMessage" class="btn btn-danger">Add New Message</a>
+</div>

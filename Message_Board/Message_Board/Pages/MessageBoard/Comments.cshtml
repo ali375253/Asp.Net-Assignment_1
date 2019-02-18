@@ -1,0 +1,18 @@
+﻿@page "{messageId:int}"
+@model Message_Board.Pages.MessageBoard.CommentsModel
+@{
+    ViewData["Title"] = "Comments";
+}
+
+<h1>Comments</h1>
+<div class="panel panel-default">
+
+    @foreach (var comment in Model.Comments)
+    {
+        <div class="panel-body">
+            <span>@comment.Content</span>
+        </div>
+    }
+    <a asp-page=".\Timeline" class="btn btn-primary">Back to Timeline</a>
+</div>
+

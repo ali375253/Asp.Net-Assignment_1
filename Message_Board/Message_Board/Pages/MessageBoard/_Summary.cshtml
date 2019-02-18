@@ -1,0 +1,14 @@
+﻿@using Message_Board
+@model Timeline
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+        @*<span>@Model.MessageId</span>*@
+        <span>@Model.MessageContent</span><br />
+        <span><asp:button asp-page="" class="btn btn-primary">Like</asp:button> : @Model.Likes</span>
+        <span><asp:button onclick="" class="btn btn-primary">Comment</asp:button> : @Model.Comments</span><br />
+    </div>
+</div>
+

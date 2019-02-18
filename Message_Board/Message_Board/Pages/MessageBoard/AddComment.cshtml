@@ -1,0 +1,20 @@
+﻿@page "{messageId:int}"
+@model Message_Board.Pages.MessageBoard.AddCommentModel
+@{
+    ViewData["Title"] = "AddComment";
+}
+
+<h1>AddComment</h1>
+@if (Model.Msg != null)
+{
+    <div class="alert alert-success">@Model.Msg</div>
+}
+<form method="get">
+    <div class="form-group">
+        <label>Write a Comment</label>
+        <textarea class="form-control" name="Content"></textarea>
+    </div>
+    <a asp-route-messageId="messageId"></a>
+    <span><button type="submit" class="btn btn-success">Save</button></span>
+    <a asp-page=".\Timeline" class="btn btn-info">Back to Timeline</a>
+</form>
